@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<h1>Caculate Total Trees</h1>
+<pre id="pre_json"></pre>
+
+<script type="text/javascript">
+// Get the JSON file
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
+
+
+readTextFile("https://ontariostartups.org/app/street-trees/data-2022/common.json", function(text) {
+	function sumTrees(area) {
+		var res = json.map(json => json[area]).reduce((acc, amount) => parseInt(acc) + parseInt(amount));
+		return res;
+	}
+
+    var json = JSON.parse(text);
+    // console.log(json);
+
+    // Sum trees
+	var sum_trees_etobicoke = sumTrees('Etobicoke York');
+	var sum_trees_north_york = sumTrees('North York');
+	var sum_trees_toronto = sumTrees('Toronto and East York');
+	var sum_trees_scarborough = sumTrees('Scarborough');
+
+	var json_areas = 
+	[
+		{
+			"name":"Etobicoke York", 
+			"total": sum_trees_etobicoke
+		},
+		{
+			"name":"North York",
+			"total":sum_trees_north_york
+		},
+		{
+			"name":"Toronto and East York",
+			"total":sum_trees_toronto
+		},
+		{
+			"name":"Scarborough",
+			"total":sum_trees_scarborough
+		}
+	];
+
+	console.log(json_areas);
+
+	document.getElementById("pre_json").textContent = JSON.stringify(json_areas, undefined, 2);
+});
+
+
+
+
+
+</script>
+</body>
+</html>

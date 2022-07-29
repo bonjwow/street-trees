@@ -1,0 +1,722 @@
+[
+  {
+    "Common": "Alder",
+    "Latin": "Alder",
+    "Etobicoke York": "229",
+    "North York": "38",
+    "Toronto and East York": "42",
+    "Scarborough": "52",
+    "file": "alder.png",
+    "color": "334d5c"
+  },
+  {
+    "Common": "Apple",
+    "Latin": "Apple",
+    "Etobicoke York": "5913",
+    "North York": "7856",
+    "Toronto and East York": "3145",
+    "Scarborough": "3828",
+    "file": "apple.png",
+    "color": "efc94c"
+  },
+  {
+    "Common": "Apricot",
+    "Latin": "Apricot",
+    "Etobicoke York": "87",
+    "North York": "110",
+    "Toronto and East York": "141",
+    "Scarborough": "3",
+    "file": "apricot.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Ash",
+    "Latin": "Ash",
+    "Etobicoke York": "3359",
+    "North York": "1578",
+    "Toronto and East York": "4182",
+    "Scarborough": "1758",
+    "file": "ash.png",
+    "color": "e27a3f"
+  },
+  {
+    "Common": "Aspen",
+    "Latin": "Aspen",
+    "Etobicoke York": "53",
+    "North York": "68",
+    "Toronto and East York": "84",
+    "Scarborough": "52",
+    "file": "aspen.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Basswood",
+    "Latin": "Basswood",
+    "Etobicoke York": "2867",
+    "North York": "1840",
+    "Toronto and East York": "1474",
+    "Scarborough": "1915",
+    "file": "basswood.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Beech",
+    "Latin": "Beech",
+    "Etobicoke York": "970",
+    "North York": "1363",
+    "Toronto and East York": "1531",
+    "Scarborough": "719",
+    "file": "beech.png" ,
+    "color": "df4949"
+  },
+  {
+    "Common": "Birch",
+    "Latin": "Birch",
+    "Etobicoke York": "3683",
+    "North York": "6479",
+    "Toronto and East York": "1822",
+    "Scarborough": "1025",
+    "file": "birch.png",
+    "color": "aeaeae"
+  },
+  {
+    "Common": "Black Locust",
+    "Latin": "Black Locust",
+    "Etobicoke York": "972",
+    "North York": "512",
+    "Toronto and East York": "1032",
+    "Scarborough": "495",
+    "file": "black-locust.png",
+    "color": "776355"
+  },
+  {
+    "Common": "Blackgum",
+    "Latin": "Blackgum",
+    "Etobicoke York": "102",
+    "North York": "60",
+    "Toronto and East York": "98",
+    "Scarborough": "46",
+    "file": "blackgum.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Blue Beech",
+    "Latin": "Blue Beech",
+    "Etobicoke York": "74",
+    "North York": "130",
+    "Toronto and East York": "107",
+    "Scarborough": "18",
+    "file": "beech.png" ,
+    "color": "df4949"
+  },
+  {
+    "Common": "Buckeye",
+    "Latin": "Buckeye",
+    "Etobicoke York": "1242",
+    "North York": "1024",
+    "Toronto and East York": "583",
+    "Scarborough": "1766",
+    "file": "buckeye.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Buckthorn",
+    "Latin": "Buckthorn",
+    "Etobicoke York": "40",
+    "North York": "188",
+    "Toronto and East York": "20",
+    "Scarborough": "29",
+    "file": "buckthorn.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Butternut",
+    "Latin": "Butternut",
+    "Etobicoke York": "167",
+    "North York": "167",
+    "Toronto and East York": "67",
+    "Scarborough": "148",
+    "file": "butternut.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Catalpa",
+    "Latin": "Catalpa",
+    "Etobicoke York": "2185",
+    "North York": "1929",
+    "Toronto and East York": "882",
+    "Scarborough": "1538",
+    "file": "catalpa.png",
+    "color": "57385c"
+  },
+  {
+    "Common": "Cedar",
+    "Latin": "Cedar",
+    "Etobicoke York": "2335",
+    "North York": "4014",
+    "Toronto and East York": "3444",
+    "Scarborough": "617",
+    "file": "cedar.png",
+    "color": "4edaef"
+  },
+  {
+    "Common": "Cherry",
+    "Latin": "Cherry",
+    "Etobicoke York": "2293",
+    "North York": "2485",
+    "Toronto and East York": "2182",
+    "Scarborough": "1258",
+    "file": "cherry.png",
+    "color": "8db500"
+  },
+  {
+    "Common": "Chestnut",
+    "Latin": "Chestnut",
+    "Etobicoke York": "5",
+    "North York": "6",
+    "Toronto and East York": "8",
+    "Scarborough": "3",
+    "file": "horsechestnut.png",
+    "color": "767937"
+  },
+  {
+    "Common": "Cork tree",
+    "Latin": "Cork tree",
+    "Etobicoke York": "506",
+    "North York": "269",
+    "Toronto and East York": "390",
+    "Scarborough": "316",
+    "file": "cork.png",
+    "color": "E3002C"
+  },
+  {
+    "Common": "Cucumbertree",
+    "Latin": "Cucumbertree",
+    "Etobicoke York": "106",
+    "North York": "178",
+    "Toronto and East York": "257",
+    "Scarborough": "22",
+    "file": "cucumber.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Dawn Redwood",
+    "Latin": "Dawn Redwood",
+    "Etobicoke York": "55",
+    "North York": "50",
+    "Toronto and East York": "48",
+    "Scarborough": "10",
+    "file": "dawn-redwood.png",
+    "color": "AFCBED"
+  },
+  {
+    "Common": "Dogwood",
+    "Latin": "Dogwood",
+    "Etobicoke York": "174",
+    "North York": "191",
+    "Toronto and East York": "506",
+    "Scarborough": "211",
+    "file": "dogwood.png",
+    "color": "586576"
+  },
+  {
+    "Common": "Douglas Fir",
+    "Latin": "Douglas Fir",
+    "Etobicoke York": "338",
+    "North York": "679",
+    "Toronto and East York": "103",
+    "Scarborough": "41",
+    "file": "douglas-fir.png",
+    "color": "76FFFE"
+  },
+  {
+    "Common": "Elm",
+    "Latin": "Elm",
+    "Etobicoke York": "6366",
+    "North York": "7024",
+    "Toronto and East York": "9585",
+    "Scarborough": "5540",
+    "file": "elm.png",
+    "color": "FCFF49"
+  },
+  {
+    "Common": "Cypress",
+    "Latin": "Cypress",
+    "Etobicoke York": "233",
+    "North York": "285",
+    "Toronto and East York": "199",
+    "Scarborough": "13",
+    "file": "cypress.png",
+    "color": "123065"
+  },
+  {
+    "Common": "Fir",
+    "Latin": "Fir",
+    "Etobicoke York": "745",
+    "North York": "953",
+    "Toronto and East York": "496",
+    "Scarborough": "56",
+    "file": "douglas-fir.png",
+    "color": "76FFFE"
+  },
+  {
+    "Common": "Ginkgo",
+    "Latin": "Ginkgo",
+    "Etobicoke York": "4792",
+    "North York": "3622",
+    "Toronto and East York": "3572",
+    "Scarborough": "2533",
+    "file": "ginkgo.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Golden Chain tree",
+    "Latin": "Golden Chain tree",
+    "Etobicoke York": "99",
+    "North York": "32",
+    "Toronto and East York": "78",
+    "Scarborough": "23",
+    "file": "golden-chain.png",
+    "color": "856667"
+  },
+  {
+    "Common": "Golden rain tree",
+    "Latin": "Golden rain tree",
+    "Etobicoke York": "52",
+    "North York": "8",
+    "Toronto and East York": "25",
+    "Scarborough": "12",
+    "file": "golden-rain.png",
+    "color": "A20527"
+  },
+  {
+    "Common": "Hackberry",
+    "Latin": "Hackberry",
+    "Etobicoke York": "3280",
+    "North York": "2680",
+    "Toronto and East York": "1924",
+    "Scarborough": "3833",
+    "file": "hackberry.png",
+    "color": "E4533B"
+  },
+  {
+    "Common": "Hawthorn",
+    "Latin": "Hawthorn",
+    "Etobicoke York": "645",
+    "North York": "611",
+    "Toronto and East York": "427",
+    "Scarborough": "498",
+    "file": "hawthorn.png",
+    "color": "E8BE4E"
+  },
+  {
+    "Common": "Hazel",
+    "Latin": "Hazel",
+    "Etobicoke York": "669",
+    "North York": "611",
+    "Toronto and East York": "361",
+    "Scarborough": "565",
+    "file": "witch-hazel.png",
+    "color": "3286B9"
+  },
+  {
+    "Common": "Hemlock",
+    "Latin": "Hemlock",
+    "Etobicoke York": "113",
+    "North York": "240",
+    "Toronto and East York": "298",
+    "Scarborough": "51",
+    "file": "hemlock.png",
+    "color": "510E23"
+  },
+  {
+    "Common": "Hickory",
+    "Latin": "Hickory",
+    "Etobicoke York": "107",
+    "North York": "44",
+    "Toronto and East York": "44",
+    "Scarborough": "16",
+    "file": "hickory.png",
+    "color": "698967"
+  },
+  {
+    "Common": "Honey Locust",
+    "Latin": "Honey Locust",
+    "Etobicoke York": "14773",
+    "North York": "15291",
+    "Toronto and East York": "13030",
+    "Scarborough": "13676",
+    "file": "locust.png",
+    "color": "efc94c"
+  },
+  {
+    "Common": "Hornbeam",
+    "Latin": "Hornbeam",
+    "Etobicoke York": "85",
+    "North York": "75",
+    "Toronto and East York": "150",
+    "Scarborough": "74",
+    "file": "hornbeam.png",
+    "color": "C32E38"
+  },
+  {
+    "Common": "Horsechestnut",
+    "Latin": "Horsechestnut",
+    "Etobicoke York": "1708",
+    "North York": "1261",
+    "Toronto and East York": "1569",
+    "Scarborough": "1193",
+    "file": "horsechestnut.png",
+    "color": "767937"
+  },
+  {
+    "Common": "Ironwood",
+    "Latin": "Ironwood",
+    "Etobicoke York": "427",
+    "North York": "379",
+    "Toronto and East York": "499",
+    "Scarborough": "329",
+    "file": "ironwood.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Juniper",
+    "Latin": "Juniper",
+    "Etobicoke York": "251",
+    "North York": "983",
+    "Toronto and East York": "325",
+    "Scarborough": "38",
+    "file": "juniper.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Katsura",
+    "Latin": "Katsura",
+    "Etobicoke York": "436",
+    "North York": "664",
+    "Toronto and East York": "978",
+    "Scarborough": "424",
+    "file": "katsura.png",
+    "color": "417698"
+  },
+  {
+    "Common": "Kentucky coffee",
+    "Latin": "Kentucky coffee",
+    "Etobicoke York": "5718",
+    "North York": "3878",
+    "Toronto and East York": "3228",
+    "Scarborough": "4076",
+    "file": "kentucky-coffee.png",
+    "color": "445716"
+  },
+  {
+    "Common": "Larch",
+    "Latin": "Larch",
+    "Etobicoke York": "175",
+    "North York": "181",
+    "Toronto and East York": "78",
+    "Scarborough": "66",
+    "file": "larch.png",
+    "color": "FBF253"
+  },
+  {
+    "Common": "Lilac",
+    "Latin": "Lilac",
+    "Etobicoke York": "5618",
+    "North York": "5172",
+    "Toronto and East York": "3344",
+    "Scarborough": "3787",
+    "file":"japanese-tree-lilac.png",
+    "color":"776487"
+  },
+  {
+    "Common": "Linden",
+    "Latin": "Linden",
+    "Etobicoke York": "9964",
+    "North York": "9089",
+    "Toronto and East York": "7112",
+    "Scarborough": "11219",
+    "file": "linden.png",
+    "color": "df4949"
+  },
+  {
+    "Common": "Maackia",
+    "Latin": "Maackia",
+    "Etobicoke York": "12",
+    "North York": "29",
+    "Toronto and East York": "30",
+    "Scarborough": "45",
+    "file": "maackia.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Magnolia",
+    "Latin": "Magnolia",
+    "Etobicoke York": "659",
+    "North York": "1136",
+    "Toronto and East York": "899",
+    "Scarborough": "34",
+    "file": "magnolia.png",
+    "color": "E7AC40"
+  },
+  {
+    "Common": "Maple",
+    "Latin": "Maple",
+    "Etobicoke York": "50776",
+    "North York": "53416",
+    "Toronto and East York": "44054",
+    "Scarborough": "39917",
+    "file": "maple.png",
+    "color": "0088bb"
+  },
+  {
+    "Common": "Maple Norway",
+    "Latin": "Maple Norway",
+    "Etobicoke York": "309",
+    "North York": "6",
+    "Toronto and East York": "16",
+    "Scarborough": "16",
+    "file": "maple.png",
+    "color": "0088bb"
+  },
+  {
+    "Common": "Mountain ash",
+    "Latin": "Mountain ash",
+    "Etobicoke York": "1147",
+    "North York": "1783",
+    "Toronto and East York": "711",
+    "Scarborough": "1011",
+    "file": "mountainash.png",
+    "color": "D4662E"
+  },
+  {
+    "Common": "Mulberry",
+    "Latin": "Mulberry",
+    "Etobicoke York": "1966",
+    "North York": "2953",
+    "Toronto and East York": "2224",
+    "Scarborough": "327",
+    "file": "mulberry.png",
+    "color":  "3286B9"
+  },
+  {
+    "Common": "Oak",
+    "Latin": "Oak",
+    "Etobicoke York": "10883",
+    "North York": "8071",
+    "Toronto and East York": "10988",
+    "Scarborough": "8280",
+    "file": "oak.png",
+    "color":  "83e3a9"
+  },
+  {
+    "Common": "Olive",
+    "Latin": "Olive",
+    "Etobicoke York": "332",
+    "North York": "214",
+    "Toronto and East York": "125",
+    "Scarborough": "38",
+    "file": "olive.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Pagoda",
+    "Latin": "Pagoda",
+    "Etobicoke York": "76",
+    "North York": "49",
+    "Toronto and East York": "62",
+    "Scarborough": "30",
+    "file": "pagoda.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Peach",
+    "Latin": "Peach",
+    "Etobicoke York": "108",
+    "North York": "87",
+    "Toronto and East York": "274",
+    "Scarborough": "1",
+    "file": "peach.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Pear",
+    "Latin": "Pear",
+    "Etobicoke York": "2978",
+    "North York": "3276",
+    "Toronto and East York": "2845",
+    "Scarborough": "2900",
+    "file": "pear.png",
+    "color": "ddc9ea"
+  },
+  {
+    "Common": "Pine",
+    "Latin": "Pine",
+    "Etobicoke York": "3639",
+    "North York": "7943",
+    "Toronto and East York": "2368",
+    "Scarborough": "1052",
+    "file": "pine.png",
+    "color": "820009"
+  },
+  {
+    "Common": "Pine scots",
+    "Latin": "Pine scots",
+    "Etobicoke York": "762",
+    "North York": "1268",
+    "Toronto and East York": "334",
+    "Scarborough": "214",
+    "file": "pinescots.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Planetree",
+    "Latin": "Planetree",
+    "Etobicoke York": "2202",
+    "North York": "1882",
+    "Toronto and East York": "1833",
+    "Scarborough": "2651",
+    "file": "planetree.png",
+    "color": "e27a3f"
+  },
+  {
+    "Common": "Plum",
+    "Latin": "Plum",
+    "Etobicoke York": "647",
+    "North York": "772",
+    "Toronto and East York": "737",
+    "Scarborough": "117",
+    "file": "plum.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Poplar",
+    "Latin": "Poplar",
+    "Etobicoke York": "422",
+    "North York": "197",
+    "Toronto and East York": "376",
+    "Scarborough": "111",
+    "file": "poplar.png",
+    "color": "820009"
+  },
+  {
+    "Common": "Redbud",
+    "Latin": "Redbud",
+    "Etobicoke York": "604",
+    "North York": "556",
+    "Toronto and East York": "874",
+    "Scarborough": "324",
+    "file": "redbud.png",
+    "color": "745556"
+  },
+  {
+    "Common": "Sassafras",
+    "Latin": "Sassafras",
+    "Etobicoke York": "4",
+    "North York": "4",
+    "Toronto and East York": "16",
+    "Scarborough": "9",
+    "file": "sassafras.png",
+    "color": "E6893E"
+  },
+  {
+    "Common": "Serviceberry",
+    "Latin": "Serviceberry",
+    "Etobicoke York": "2524",
+    "North York": "3483",
+    "Toronto and East York": "2953",
+    "Scarborough": "2027",
+    "file": "serviceberry.png",
+    "color": "C9BE5C"
+  },
+  {
+    "Common": "Smoketree",
+    "Latin": "Smoketree",
+    "Etobicoke York": "48",
+    "North York": "59",
+    "Toronto and East York": "258",
+    "Scarborough": "5",
+    "file": "smoketree.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Spruce",
+    "Latin": "Spruce",
+    "Etobicoke York": "13110",
+    "North York": "19269",
+    "Toronto and East York": "7137",
+    "Scarborough": "2418",
+    "file": "spruce.png",
+    "color": "475465"
+  },
+  {
+    "Common": "Sweetgum",
+    "Latin": "Sweetgum",
+    "Etobicoke York": "171",
+    "North York": "194",
+    "Toronto and East York": "232",
+    "Scarborough": "142",
+    "file": "sweetgum.png",
+    "color": "365724"
+  },
+  {
+    "Common": "Tulip tree",
+    "Latin": "Tulip tree",
+    "Etobicoke York": "1418",
+    "North York": "1975",
+    "Toronto and East York": "1867",
+    "Scarborough": "1419",
+    "file": "tuliptree.png",
+    "color": "82200A"
+  },
+  {
+    "Common": "Walnut",
+    "Latin": "Walnut",
+    "Etobicoke York": "955",
+    "North York": "674",
+    "Toronto and East York": "366",
+    "Scarborough": "289",
+    "file": "walnut.png",
+    "color": "FCDDDD"
+  },
+  {
+    "Common": "Willow",
+    "Latin": "Willow",
+    "Etobicoke York": "921",
+    "North York": "371",
+    "Toronto and East York": "328",
+    "Scarborough": "144",
+    "file": "willow.png",
+    "color": "ADCDBB"
+  },
+  {
+    "Common": "Yellowwood",
+    "Latin": "Yellowwood",
+    "Etobicoke York": "362",
+    "North York": "275",
+    "Toronto and East York": "460",
+    "Scarborough": "334",
+    "file": "yellowood.png",
+    "color": "776487"
+  },
+  {
+    "Common": "Yew",
+    "Latin": "Yew",
+    "Etobicoke York": "644",
+    "North York": "459",
+    "Toronto and East York": "351",
+    "Scarborough": "17",
+    "file": "yew.png",
+    "color": "45b29e"
+  },
+  {
+    "Common": "Zelkova",
+    "Latin": "Zelkova",
+    "Etobicoke York": "695",
+    "North York": "366",
+    "Toronto and East York": "236",
+    "Scarborough": "535",
+    "file": "zelkova.png",
+    "color": "00a78a"
+  }
+]
