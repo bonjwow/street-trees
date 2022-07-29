@@ -23,8 +23,6 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-
-
 readTextFile("https://ontariostartups.org/app/street-trees/data-2022/common.json", function(text) {
 	function sumTrees(area) {
 		var res = json.map(json => json[area]).reduce((acc, amount) => parseInt(acc) + parseInt(amount));
@@ -32,7 +30,6 @@ readTextFile("https://ontariostartups.org/app/street-trees/data-2022/common.json
 	}
 
     var json = JSON.parse(text);
-    // console.log(json);
 
     // Sum trees
 	var sum_trees_etobicoke = sumTrees('Etobicoke York');
@@ -60,14 +57,8 @@ readTextFile("https://ontariostartups.org/app/street-trees/data-2022/common.json
 		}
 	];
 
-	console.log(json_areas);
-
 	document.getElementById("pre_json").textContent = JSON.stringify(json_areas, undefined, 2);
 });
-
-
-
-
 
 </script>
 </body>
