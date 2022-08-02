@@ -2,24 +2,13 @@
 //get year
 var GET = {};
 var query = window.location.search.substring(1).split("&");
-for (var i = 0, max = query.length; i < max; i++)
-{
+for (var i = 0, max = query.length; i < max; i++) {
     if (query[i] === "") // check for trailing & with no param
         continue;
-
     var param = query[i].split("=");
     GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
-//alert(GET.year);
-/*
-if (GET.year==undefined || GET.year=="" || GET.year==2005) {
-	year = 2005;
-} else {
-	year = 2015;
-}
-*/
 year = 2022;
-
 var treeViz = (function ($) {
 	var _self = {},
 		redrawTimer,
@@ -35,11 +24,11 @@ var treeViz = (function ($) {
                        </div></div>',
         treeTemplate = '<li><div><span class="Common"></span><span class="Latin"></span><em></em></div></li>';
 
-
     function resizeCanvas() {
     	var viz = $('#viz_wrapper'),
     		canvas = $('#tree_canvas, #hover_canvas').attr("width",viz.outerWidth()).attr("height",viz.outerHeight());
     }
+
     function formatNumber(number) {
     	var strng = number.toString();
     	if (strng.length > 3) {
@@ -47,6 +36,7 @@ var treeViz = (function ($) {
 	    }
     	return strng;
     }
+
 	function initBars() {
 		var total = [],
 			max_of_array;
@@ -59,18 +49,16 @@ var treeViz = (function ($) {
 		$.each(boroughs, function(index){
 			var snippet = $(barTemplate),
 				widthPercent = ((this.total / max_of_array) * 100).toFixed(2);
-			
 			snippet
 				.find('.count').html("0%<br>0").end()
 				.find(".location").html('<em>'+ this.name +'</em><br>' + formatNumber(this.total)).end()
 				.find('.bar').attr("id", "borough-" + index).end()
 				.css({"width": widthPercent + '%'})
 				.appendTo('#bars');
-
-
 		});
 		resizeCanvas();
 	}
+
 	function initTrees() {
 		var treeList = $('#trees_grid').find('ul');
 		$.each(treeData, function(index){
@@ -85,8 +73,6 @@ var treeViz = (function ($) {
 			processTree(this, index);
 		});
 		resizeCanvas();
-	
-
 		$('.tooltip').tooltipster();
 	}
 
@@ -95,10 +81,10 @@ var treeViz = (function ($) {
 			var bar = $("#borough-" + index),
 				widthPercent = ((tree[this.name] / this.total) * 100).toFixed(6),
 				treeSpan = $('<span title="' + tree[currentSort] + ' : ' + formatNumber(tree[this.name]) + ' " data-tree="tree-' + tree_index + '" class="tree-' + tree_index + ' tooltip"></span>');
+
 			treeSpan.data('count', tree[this.name]);
 			treeSpan.width(widthPercent + "%").css('background-color', "#" + tree["color"]);
 			bar.append(treeSpan);
-			
 		}); 
 	}
 	function loadTreeData() {
@@ -159,19 +145,44 @@ var treeViz = (function ($) {
 	}
 
 	function updateBarCounts() {
+		var arr_boroughs = [];
 		$.each(boroughs, function(index){
 			var bar = $("#borough-" + index),
 				trees = bar.find('.selected'),
 				count = 0,
 				percent = 0,
 				boroughTotal = this.total;
-				
 			trees.each(function(){
 				count += parseInt($(this).data('count'));
 			});
-			percent = ((count / boroughTotal	) * 100).toFixed(2);
+			percent = ((count / boroughTotal) * 100).toFixed(2);
 			bar.parent().find('.count').html(percent + '%<br>' + formatNumber(count));
-		}); 
+
+			arr_boroughs.push(count);
+		});
+
+		// Calculate percentage for each borough
+		/*
+		var arr_percent_trees = arr_boroughs.map(getPercentTrees)
+
+		function getPercentTrees(num) {
+		    var total_numb_trees = getTotalTrees(arr_boroughs);
+		    return ((num/total_numb_trees)*100).toFixed(2);
+		}
+
+		function getTotalTrees(arr) {
+		    return arr.reduce((a, b) => a + b, 0);
+		}
+		*/
+
+		var arr_percent_trees = arr_boroughs.map(getPercentTrees)
+
+		function getPercentTrees(num) {
+		    var total_numb_trees = 195064;
+		    return Math.round((num/total_numb_trees)*100);
+		}
+		
+		addMarkers(arr_percent_trees);
 	}
 
 	function connectTrees() {
@@ -193,15 +204,13 @@ var treeViz = (function ($) {
 		$('#bars').find('.hilite').removeClass('hilite');
 		sections.addClass('hilite')
 		connectSections(sections, tree, '#hover_canvas');
-		
-	} 
+	}
+
 	function deHilightTree(tree) {
 		$('#hover_canvas').clearCanvas();
 		if ( tree ) $( tree ).removeClass('hover');
 		$('#bars').find('.hilite').removeClass('hilite');
-
 	}
-
 
 	function sortTrees(prop, asc) {
 		treeData = treeData.sort(function(a, b) {
@@ -221,8 +230,6 @@ var treeViz = (function ($) {
 	}
 
 	function initEvents() {
-
-
 		$( window ).resize(function() {
 			resizeCanvas();
 			if (redrawTimer) {
@@ -278,3 +285,48 @@ jQuery(document).ready(function(){
 	treeViz.init(); 
 	PointerEventsPolyfill.initialize({});
 });
+
+// Leaflet Map
+var arr_trees = [
+	[43.6896, -79.4795],
+	[43.6435, -79.5652],
+	[43.6745, -79.3571],
+	[43.7728, -79.2571]
+];
+
+var map = L.map('map', {
+    // Set latitude and longitude of the map center
+    center: [43.7111, -79.4035],
+    // Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
+    zoom: 11,
+    minZoom: 10,
+    maxZoom: 12,
+});
+ 
+// Create a Tile Layer and add it to the map
+var tiles = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Markers
+var currentMarkers = [];
+function addMarkers(radii) {
+	if (currentMarkers !== null) {
+	    for (var i = currentMarkers.length - 1; i >= 0; i--) {
+	      currentMarkers[i].remove();
+	    }
+	}
+	
+	for (var i = 0; i < arr_trees.length; i++) {
+		marker = L.circleMarker(arr_trees[i], {
+	    fillColor: '#5BB318',
+	    fillOpacity: 0.5,
+	    radius: radii[i],
+	    stroke: false,
+		}).addTo(map);
+		currentMarkers.push(marker);
+	}
+}
+
+defaultRadii = [0, 0, 0, 0];
+addMarkers(defaultRadii);

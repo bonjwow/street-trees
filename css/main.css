@@ -852,7 +852,6 @@ footer {
     opacity: 0;
 }
 
-
 /* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
 .tooltipster-content-changing {
     opacity: 0.5;
@@ -871,4 +870,20 @@ footer {
         font-size: 36px;
         line-height: 32px;
     }
+}
+
+/* Map */
+#map { 
+  /*height: 100vh;*/
+  height: 350px;
+  margin-bottom: 50px;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 100%;
+}
+
+.leaflet-tile-pane {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
