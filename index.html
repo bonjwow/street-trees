@@ -11,41 +11,34 @@
     <meta name="description" content="An Interactive Visualization of Street Trees in Toronto">
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="noindex, nofollow" />
-
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:400,900" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
         <div class="container">
-          <header>
-            <h1>Urban Tree Coverage by Community Council Areas in Toronto</h1>
-        </header>
-    </div>
-
-    <!-- Map -->
-    <div id="map"></div> 
-
-    <!-- Stacked bar charts and tree icons -->
-    <div id="viz_wrapper"> 
-        <div id="bars">
+            <header>
+                <h1>Urban Tree Coverage by Community Council Areas in Toronto</h1>
+            </header>
         </div>
-        <div id="trees_grid" class="Common">
-            <ul class="cf">  
-            </ul>
+
+        <!-- Circle packing chart -->
+        <svg id="circle-packing" width="500" height="500"></svg>
+
+        <!-- Stacked bar charts and tree icons -->
+        <div id="viz_wrapper"> 
+            <div id="bars">
+            </div>
+            <div id="trees_grid" class="Common">
+                <ul class="cf"></ul>
+            </div>
+            <canvas id="tree_canvas"></canvas>
+            <canvas id="hover_canvas"></canvas>
         </div>
-        <canvas id="tree_canvas"></canvas>
-        <canvas id="hover_canvas"></canvas>
     </div>
-</div>
 
 <script src='js/vendor/jquery-1.9.1.min.js'></script>
 <script src='js/vendor/jcanvas.min.js'></script>

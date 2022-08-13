@@ -229,6 +229,7 @@ blockquote:before {
 #viz_wrapper .bar_wrapper .bar {
     height: 55px;
     overflow: hidden;
+    cursor: pointer;
 }
 #viz_wrapper .bar_wrapper .bar span {
     height: 55px;
@@ -899,4 +900,38 @@ footer {
 .leaflet-tile-pane {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+}
+
+/* Circle packing chart  */
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.label {
+  font: 14px 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-anchor: middle;
+  text-shadow: 0 2px 0 #fff, 2px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
+
+#circle-packing {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

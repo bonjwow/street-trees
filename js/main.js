@@ -87,22 +87,23 @@ var treeViz = (function ($) {
 			bar.append(treeSpan);
 		}); 
 	}
+
 	function loadTreeData() {
 		var trees = $.getJSON( "data-"+year+"/common.json", function(data) {
-				treeData = data;
-				initTrees();
-				resizeCanvas();
-		    });
+			treeData = data;
+			initTrees();
+			resizeCanvas();
+		});
 	}
 
 	function loadBoroughData() {
 		var temp = $.getJSON( "data-"+year+"/boroughs.json", function(data) {
-				boroughs = data;
-				initBars();
-				loadTreeData();
-		    });
+			boroughs = data;
+			initBars();
+			loadTreeData();
+		});
 	}
-	
+
 	function getArea(spanA, spanB) {
 
 		var vizOffset =  $('#viz_wrapper').offset(),
@@ -152,6 +153,7 @@ var treeViz = (function ($) {
 				count = 0,
 				percent = 0,
 				boroughTotal = this.total;
+
 			trees.each(function(){
 				count += parseInt($(this).data('count'));
 			});
@@ -161,28 +163,50 @@ var treeViz = (function ($) {
 			arr_boroughs.push(count);
 		});
 
-		// Calculate percentage for each borough
-		/*
-		var arr_percent_trees = arr_boroughs.map(getPercentTrees)
+		// Get the names of the selected trees and the sizes
+		var tree_names_selected = [];
 
-		function getPercentTrees(num) {
-		    var total_numb_trees = getTotalTrees(arr_boroughs);
-		    return ((num/total_numb_trees)*100).toFixed(2);
+		var trees_selected = document.querySelector('ul').querySelectorAll('.selected');
+		var arr_trees_selected = Array.prototype.slice.call(trees_selected);
+
+		if (arr_trees_selected.length > 0) {
+			for (var i = 0; i < arr_trees_selected.length; i++) {
+				tree_names_selected[i] = arr_trees_selected[i].id;
+			}
+			var trees_north_york = [];
+			var trees_etobicoke = [];
+			var trees_toronto = [];
+			var trees_scarborough = [];
+
+			function allocateTreesByArea(arrTrees, area) {
+				tree_names_selected.forEach(replaceIdToName)
+				function replaceIdToName(item, index, arr) {
+					var tree_index = parseInt(item.split("-")[1]);
+					// arr[index] = treeData[tree_index].Common;
+					var name_n_size = {
+						name: treeData[tree_index]['Common'],
+						size: parseInt(treeData[tree_index][area]),
+					};
+					arrTrees[index] = name_n_size;
+				}
+			}
+
+			allocateTreesByArea(trees_north_york, 'North York');
+			allocateTreesByArea(trees_etobicoke, 'Etobicoke York');
+			allocateTreesByArea(trees_toronto, 'Toronto and East York');
+			allocateTreesByArea(trees_scarborough, 'Scarborough');
+
+			createEmptyTreesJSON();
+			createTreesJSON(trees_north_york, 
+				trees_etobicoke, 
+				trees_toronto, 
+				trees_scarborough);
+
+		} else {
+			drawCirclePacking(empty_trees);
 		}
 
-		function getTotalTrees(arr) {
-		    return arr.reduce((a, b) => a + b, 0);
-		}
-		*/
 
-		var arr_percent_trees = arr_boroughs.map(getPercentTrees)
-
-		function getPercentTrees(num) {
-		    var total_numb_trees = 195064;
-		    return Math.round((num/total_numb_trees)*100);
-		}
-		
-		addMarkers(arr_percent_trees);
 	}
 
 	function connectTrees() {
@@ -286,47 +310,137 @@ jQuery(document).ready(function(){
 	PointerEventsPolyfill.initialize({});
 });
 
-// Leaflet Map
-var arr_trees = [
-	[43.6896, -79.4795],
-	[43.6435, -79.5652],
-	[43.6745, -79.3571],
-	[43.7728, -79.2571]
-];
+// Circle packing
+var svg = d3.select("#circle-packing"),
+    margin = 20,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-var map = L.map('map', {
-    // Set latitude and longitude of the map center
-    center: [43.7111, -79.4035],
-    // Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
-    zoom: 11,
-    minZoom: 10,
-    maxZoom: 12,
-});
- 
-// Create a Tile Layer and add it to the map
-var tiles = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+var color = d3.scaleLinear()
+    .domain([-1, 5])
+    // .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .range(['rgba(255, 0, 0, 0)', 'rgba(68, 87, 22, 1)'])
+    .interpolate(d3.interpolateHcl);
 
-// Markers
-var currentMarkers = [];
-function addMarkers(radii) {
-	if (currentMarkers !== null) {
-	    for (var i = currentMarkers.length - 1; i >= 0; i--) {
-	      currentMarkers[i].remove();
-	    }
-	}
-	
-	for (var i = 0; i < arr_trees.length; i++) {
-		marker = L.circleMarker(arr_trees[i], {
-	    fillColor: '#5BB318',
-	    fillOpacity: 0.5,
-	    radius: radii[i],
-	    stroke: false,
-		}).addTo(map);
-		currentMarkers.push(marker);
-	}
+var pack = d3.pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
+
+// Create JSON for trees by area
+function createTreesJSON(ny, et, to, sb) {
+	var all_trees = {};
+	all_trees.name = 'trees';
+
+	var areas = [
+		{name: 'North York'},
+		{name: 'Etobicoke York'},
+		{name: 'Toronto and East York'},
+		{name: 'Scarborough'}
+	];
+	all_trees.children = areas;
+
+	all_trees.children[0].children = ny;
+	all_trees.children[1].children = et;
+	all_trees.children[2].children = to;
+	all_trees.children[3].children = sb;
+
+	drawCirclePacking(all_trees);
 }
 
-defaultRadii = [0, 0, 0, 0];
-addMarkers(defaultRadii);
+function createEmptyTreesJSON() {
+	var all_trees = {};
+	all_trees.name = 'trees';
+
+	var areas = [
+		{name: 'North York'},
+		{name: 'Etobicoke York'},
+		{name: 'Toronto and East York'},
+		{name: 'Scarborough'}
+	];
+	all_trees.children = areas;
+
+	all_trees.children[0].children = [{name: 'North York', size: 195064}];
+	all_trees.children[1].children = [{name: 'Etobicoke York', size: 182385}];
+	all_trees.children[2].children = [{name: 'Toronto and East York', size: 152424}];
+	all_trees.children[3].children = [{name: 'Scarborough', size: 128299}];
+
+	return all_trees;
+}
+var empty_trees = createEmptyTreesJSON();
+// Draw empty trees for placeholder
+drawCirclePacking(empty_trees);
+
+// Draw circle packing chart
+function drawCirclePacking(root) {
+	// Remove previous elements to prevent corruption
+	function removePreviousElements() {
+		var all_nodes = document.querySelectorAll('.node');
+		var all_labels = document.querySelectorAll('.label');
+		function removeElements(el) {
+			for (let i = 0; i < el.length; i++) {
+				el[i].remove();
+			}
+		}
+		removeElements(all_nodes);
+		removeElements(all_labels);		
+	}
+	removePreviousElements();
+
+	root = d3.hierarchy(root)
+	.sum(function(d) { return d.size; })
+	.sort(function(a, b) { return b.value - a.value; });
+
+	var focus = root,
+	nodes = pack(root).descendants(),
+	view;
+
+	var circle = g.selectAll("circle")
+	.data(nodes)
+	.enter().append("circle")
+	.attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+	.style("fill", function(d) { return d.children ? color(d.depth) : null; })
+	.on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+
+	var text = g.selectAll("text")
+	.data(nodes)
+	.enter().append("text")
+	.attr("class", "label")
+	.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+	.style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+	// tree name
+	.text(function(d) { return d.data.name; });
+
+	var node = g.selectAll("circle,text");
+
+	svg
+	.style("background", color(-1))
+	.on("click", function() { zoom(root); });
+
+	zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+	function zoom(d) {
+		var focus0 = focus; focus = d;
+
+		var transition = d3.transition()
+		.duration(d3.event.altKey ? 7500 : 750)
+		.tween("zoom", function(d) {
+			var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+			return function(t) { zoomTo(i(t)); };
+		});
+
+		transition.selectAll("text")
+		.filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+		.style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+		.on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+		.on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+	}
+
+	function zoomTo(v) {
+		var k = diameter / v[2]; view = v;
+		node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+		circle.attr("r", function(d) { return d.r * k; });
+	}	
+
+}
+
+
