@@ -437,7 +437,7 @@
     "Toronto and East York": "7112",
     "Scarborough": "11219",
     "file": "linden.png",
-    "color": "df4949"
+    "color": "C9BE5C"
   },
   {
     "Common": "Maackia",
@@ -457,7 +457,7 @@
     "Toronto and East York": "899",
     "Scarborough": "34",
     "file": "magnolia.png",
-    "color": "E7AC40"
+    "color": "76FFFE"
   },
   {
     "Common": "Maple",
@@ -467,7 +467,7 @@
     "Toronto and East York": "44054",
     "Scarborough": "39917",
     "file": "maple.png",
-    "color": "0088bb"
+    "color": "df4949"
   },
   {
     "Common": "Maple Norway",
@@ -487,7 +487,7 @@
     "Toronto and East York": "711",
     "Scarborough": "1011",
     "file": "mountainash.png",
-    "color": "D4662E"
+    "color": "efc94c"
   },
   {
     "Common": "Mulberry",
@@ -557,7 +557,7 @@
     "Toronto and East York": "2368",
     "Scarborough": "1052",
     "file": "pine.png",
-    "color": "820009"
+    "color": "0088bb"
   },
   {
     "Common": "Pine scots",

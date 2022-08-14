@@ -443,4 +443,9 @@ function drawCirclePacking(root) {
 
 }
 
+// Deselect All button
+var btn_deselect = document.querySelector('#btn_deselect');
+btn_deselect.addEventListener("click", function(){
+	location.reload();
+});
 

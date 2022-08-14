@@ -934,4 +934,32 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 25px;
+}
+
+/* Deselect All button */
+.button {
+    font: 14px 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-deselect {
+    background-color: black; 
+    color: white; 
+    border: 2px solid white;
+}
+
+.button-deselect:hover {
+    background-color: white;
+    color: black;
 }
