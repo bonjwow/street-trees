@@ -318,8 +318,8 @@ var svg = d3.select("#circle-packing"),
 
 var color = d3.scaleLinear()
     .domain([-1, 5])
-    // .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-    .range(['rgba(255, 0, 0, 0)', 'rgba(68, 87, 22, 1)'])
+    // .range(['rgba(0, 0, 0, 0)', 'rgba(68, 87, 22, 1)'])
+    .range(['rgba(0, 0, 0, 0)', '#7f7f7f'])
     .interpolate(d3.interpolateHcl);
 
 var pack = d3.pack()
