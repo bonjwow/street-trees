@@ -305,7 +305,8 @@ blockquote:before {
 
 
 #trees_grid {
-    padding: 20px 18px 18px;
+    /*padding: 20px 18px 18px;*/
+    padding: 1rem;
     position: relative;
 }
 
@@ -886,6 +887,21 @@ footer {
     }
 }
 
+/* Centerizing */
+.horizontal-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 /* Map */
 #map { 
   /*height: 100vh;*/
@@ -930,13 +946,6 @@ footer {
   pointer-events: none;
 }
 
-#circle-packing {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
-}
-
 /* Deselect All button */
 .button {
     font: 14px 'Roboto', sans-serif;
@@ -962,4 +971,16 @@ footer {
 .button-deselect:hover {
     background-color: white;
     color: black;
+}
+
+#body-text {
+    max-width: 40rem;
+    padding: 1rem;
+    padding-top: 3rem;
+}
+
+@media only screen and (max-width: 1025px) {
+  #body-text {
+    padding-top: 1rem;
+  }
 }

@@ -200,6 +200,16 @@
     "color": "45b29e"
   },
   {
+    "Common": "Cypress",
+    "Latin": "Cypress",
+    "Etobicoke York": "233",
+    "North York": "285",
+    "Toronto and East York": "199",
+    "Scarborough": "13",
+    "file": "cypress.png",
+    "color": "123065"
+  },
+  {
     "Common": "Dawn Redwood",
     "Latin": "Dawn Redwood",
     "Etobicoke York": "55",
@@ -238,16 +248,6 @@
     "Scarborough": "5540",
     "file": "elm.png",
     "color": "FCFF49"
-  },
-  {
-    "Common": "Cypress",
-    "Latin": "Cypress",
-    "Etobicoke York": "233",
-    "North York": "285",
-    "Toronto and East York": "199",
-    "Scarborough": "13",
-    "file": "cypress.png",
-    "color": "123065"
   },
   {
     "Common": "Fir",
